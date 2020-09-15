@@ -22,5 +22,5 @@ checkoutEle.addEventListener("click", function() {
     })
     .catch(function (error) {
         console.log(error);
-    });
+    })
 });

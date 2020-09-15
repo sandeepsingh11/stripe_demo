@@ -15,7 +15,7 @@
     <section>
         <div class="product">
         <img
-            src="./img/kyoko kirigiri.jpg"
+            src="./img/kyoko_kirigiri.jpg"
             alt="An image of Kyoko Kirigiri"
         />
         <div class="description">
