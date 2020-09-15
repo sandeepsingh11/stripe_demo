@@ -13,18 +13,46 @@
     <h1>Best Waifus</h1>
 
     <section>
-        <div class="product">
-        <img
-            src="./img/kyoko_kirigiri.jpg"
-            alt="An image of Kyoko Kirigiri"
-        />
-        <div class="description">
-            <h3>Kyoko Kirigiri</h3>
-            <h5>$10.00</h5>
-        </div>
-        </div>
+        <?php
+
+        require_once("./items_db.php");
+        foreach ($prices as $priceObj) {
+            $productObj = getProduct($priceObj["product"]);
+            $waifuName = str_replace(' ', '-', $productObj['name']);
+
+            ?>
+
+            <div class="product">
+                <div class="product-img">
+                    <img src="<?php echo $productObj['images'][0] ?>" alt="Picture of <?php echo $productObj['name'] ?>">
+                </div>
+
+                <h3 class="product-name"><?php echo $productObj['name'] ?></h3>
+                <p class="product-desc"><?php echo $productObj['description'] ?></p>
+
+                <div class="price-container">
+                    <h4 class="product-price">$<?php echo ($priceObj['unit_amount'] / 100) ?></h4>
+
+                    <div class="quantity-container">
+                        <input type="number" name="<?php echo "quantity-" . $waifuName ?>" class="quantity" data-waifu="<?php echo $waifuName ?>" data-price-id="<?php echo $priceObj['id'] ?>" value=0>
+                    </div>
+                </div>
+
+
+
+                <button class="add-button" id="<?php echo $waifuName ?>">Add</button>
+            </div>
+
+            <?php
+        }
+
+        ?>
+
+
+
 
         <button id="checkout-button">Checkout</button>
+
     </section>
 
 
