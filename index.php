@@ -12,7 +12,20 @@
 
     <h1>Best Waifus</h1>
 
-    <button id="checkout-button">Checkout</button>
+    <section>
+        <div class="product">
+        <img
+            src="./img/kyoko kirigiri.jpg"
+            alt="An image of Kyoko Kirigiri"
+        />
+        <div class="description">
+            <h3>Kyoko Kirigiri</h3>
+            <h5>$10.00</h5>
+        </div>
+        </div>
+
+        <button id="checkout-button">Checkout</button>
+    </section>
 
 
 
